@@ -1,0 +1,318 @@
+<!--
+Google IO 2012/2013 HTML5 Slide Template
+
+Authors: Eric Bidelman <ebidel@gmail.com>
+         Luke Mahé <lukem@google.com>
+
+URL: https://code.google.com/p/io-2012-slides
+-->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Introduction to Kotlin</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <!--<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">-->
+  <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+  <!--This one seems to work all the time, but really small on ipad-->
+  <!--<meta name="viewport" content="initial-scale=0.4">-->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="stylesheet" media="all" href="theme/css/default.css">
+  <link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="theme/css/phone.css">
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->
+  <script data-main="js/slides" src="js/require-1.0.8.min.js"></script>
+</head>
+<body style="opacity: 0">
+
+<slides class="layout-widescreen">
+
+  <slide class="logoslide nobackground">
+    <article class="flexbox vcenter">
+      <span><img src="images/google_developers_logo.png"></span>
+    </article>
+  </slide>
+
+  <slide class="title-slide segue nobackground">
+    <aside class="gdbar"><img src="images/google_developers_icon_128.png"></aside>
+    <!-- The content of this hgroup is replaced programmatically through the slide_config.json. -->
+    <hgroup class="auto-fadein">
+      <h1 data-config-title><!-- populated from slide_config.json --></h1>
+      <h2 data-config-subtitle><!-- populated from slide_config.json --></h2>
+      <p data-config-presenter><!-- populated from slide_config.json --></p>
+    </hgroup>
+  </slide>
+
+  <!-- Slide 3 -->
+  <slide>
+    <hgroup>
+      <h2>What is Kotlin Language?</h2>
+    </hgroup>
+    <article>
+      <ul>
+        <li>Kotlin is a new programming language from JetBrains.</li>
+        <li>It first appeared in 2011 when JetBrains unveiled their project named “Kotlin”
+          <ul>
+            <li>Kotlin is an Open-Source Language.</li>
+            <li>Kotlin is the Official Language of Android.</li>
+          </ul>
+        </li>
+        <li>Kotlin also supports procedural programming with the use of functions</li>
+        <li>“Statically typed programming language”.</li>
+      </ul>
+    </article>
+  </slide>
+  <!-- Slide 3 -->
+
+  <!-- Slide 4 -->
+    <slide>
+    <hgroup>
+      <h2>Variable initialization</h2>
+    </hgroup>
+    <article>
+      <pre class="prettyprint" data-lang="">
+      /* Java Code */
+      static int num1, num2; //explicit declaration
+      num1 = 20; //use the variables anywhere
+      num2 = 30;
+
+      <b>/* Kotlin Code*/
+      val a: Int
+      val b: Int
+      a=5
+      b=10</b>
+</pre>
+    </article>
+  </slide>
+  <!-- Slide 4 -->
+    <!-- Slide 4 -->
+    <slide>
+    <hgroup>
+    <h2>Hello World</h2>
+    </hgroup>
+    <article>
+      <pre class="prettyprint" data-lang="Kotlin">
+ /* Kotlin Code*/
+/* Simple Hello Word Example*/
+
+//optional package header
+package hello 
+
+//package level function, which return Unit and takes an array of string as parameter
+<b>fun main(args: Array < String > ) { 
+ val scope = “world”
+ println(“Hello, $scope!”) //semicolons are optional, have you noticed that? :)
+}</b>
+</pre>
+    </article>
+  </slide>
+  <!-- Slide 4 -->
+
+  <!-- Slide 5 -->
+  <slide>
+    <hgroup>
+      <h2>Benefits of Kotlin Language</h2>
+    </hgroup>
+    <article>
+      <ul class="build">
+        <li>Kotlin compiles to JVM bytecode or JavaScript </li>
+        <li>Kotlin programs can use all existing Java Frameworks and Libraries </li>
+        <li>Kotlin can be learned easily</li>
+        <li>Automatic conversion of Java to Kotlin</li>
+        <li>Code reviews are not a problem</li>
+        <li>Kotlin’s null-safety is great</li>
+      </ul>
+    
+    </article>
+  </slide>
+<!-- Slide 5 -->
+<!-- Slide 6 -->
+  <slide>
+    <hgroup>
+      <h2>NullPointerExceptions</h2>
+    </hgroup>
+    <article>
+      <pre class="prettyprint" data-lang="Kotlin">
+      <b>val   name: String = null</b>   // tries to assign null, won’t  compile.
+  
+      <b>fun   getName() : String = null </b>  // tries to return null, won’t  compile.
+      </pre>
+    </article>
+  </slide>
+<!-- Slide 6 -->
+ <!-- Slide 7 -->
+  <slide>
+    <hgroup>
+      <h2>Features of Kotlin Language</h2>
+    </hgroup>
+    <article>
+      <ul class="build">
+        <li>Versatile.</li>
+        <ul>
+            <li>Use Kotlin for any types of Enterprise java EE development.</li>
+            <li>100% compatible with all JVM frameworks.</li>
+            <li>Write code in Kotlin and target js to run on node.js or browser.</li>
+        </ul>
+        <li>Kotlin avoids the null pointer exception.</li>
+        <li>No performance impact. Very small run time.</li>
+        <li>Lean Syntax</li>
+        
+      </ul>
+    
+    </article>
+  </slide>
+<!-- Slide 7 -->
+<!-- Slide 8 -->
+  <slide>
+    <hgroup>
+      <h2>Consider the following example -</h2>
+    </hgroup>
+    <article class="smaller">
+      
+<pre class="prettyprint" data-lang="Java">
+public class Address {
+
+   private String city;
+   private Country country;
+
+   public Address(String city, Country country) {
+       this.city = city;
+       this.country = country;
+   }
+
+   public String getCity() {
+       return city;
+   }
+   public void setCity(String city) {
+       this.city = city;
+   }
+
+   public Country getCountry() {
+       return country;
+   }
+   public void setCountry(Country country) {
+       this.country = country;
+   }
+}
+
+</pre>
+    </article>
+  </slide>
+<!-- Slide 8 -->
+<!-- Slide 9 -->
+  <slide>
+    <hgroup>
+      <h2>Consider the following example -</h2>
+    </hgroup>
+    <article class="smaller">
+      
+<pre class="prettyprint" data-lang="Kotlin">
+data class Address(var city:String, var country:Country)
+</pre>
+    </article>
+  </slide>
+<!-- Slide 9 -->
+<!-- Slide 10 -->
+  <slide>
+    <hgroup>
+      <h2>Difference Between Kotlin And Java</h2>
+    </hgroup>
+    <article>
+      <ul class="build">
+        <li>Null Safety.</li>
+            <article class="smaller">
+                <pre class="prettyprint" data-lang="Kotlin">
+val name: String? = null     //assigned   null and it will compile  also.
+  
+fun getName() : String? = null  //returned null and it  will compile too.
+/* won’t compile */ 
+  val name: String? = null
+  val len = name.length 
+
+/* correct way */ 
+  val name: String? = null  
+  val len = name?.length
+
+
+  <b>// "?" Safe Call Operator</b>
+                </pre>
+            </article>
+      </ul>
+    
+    </article>
+  </slide>
+<!-- Slide 10 -->  
+<!-- Slide 11 -->
+  <slide>
+    <hgroup>
+      <h2>Difference Between Kotlin And Java</h2>
+    </hgroup>
+    <article>
+      <ul class="build">
+        <li>Smart Casts.</li>
+            <article class="smaller">
+                <pre class="prettyprint" data-lang="Kotlin">
+fun demo(x:Any){
+
+       if(x is String){
+
+       print(x.length)  // x is automatically cast to string
+
+       }
+   }
+                </pre>
+            </article>
+      </ul>
+    
+    </article>
+  </slide>
+<!-- Slide 11 --> 
+  <!-- Slide 12 -->
+ <slide class="segue dark quote nobackground">
+    <aside class="gdbar right bottom"><img src="images/google_developers_icon_128.png"></aside>
+    <article class="flexbox vleft auto-fadein">
+      <q>
+        Let's Code.
+      </q>
+    </article>
+  </slide>
+  <!-- Slide 12 -->
+
+  <slide class="thank-you-slide segue nobackground">
+    <aside class="gdbar right"><img src="images/google_developers_icon_128.png"></aside>
+    <article class="flexbox vleft auto-fadein">
+      <h2>&lt;Thank You!&gt;</h2>
+      <!-- <p>Important contact information goes here.</p> -->
+    </article>
+    <p class="auto-fadein" data-config-contact>
+      <!-- populated from slide_config.json -->
+    </p>
+  </slide>
+
+  <slide class="logoslide dark nobackground">
+    <article class="flexbox vcenter">
+      <span><img src="images/google_developers_logo_white.png"></span>
+    </article>
+  </slide>
+
+  <slide class="backdrop"></slide>
+
+</slides>
+
+<script>
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-XXXXXXXX-1']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+
+<!--[if IE]>
+  <script src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js"></script>
+  <script>CFInstall.check({mode: 'overlay'});</script>
+<![endif]-->
+</body>
+</html>
